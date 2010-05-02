@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-TW">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>範例頁面 | COSCUP 2010</title>
+<link rel="stylesheet" href="./style.css" type="text/css" media="screen" />
+
+<!--
+
+WordPress 會使用相容模式的 jQuery，
+請將自己的 script 包在 jQuery(function($){ ...} ); 內。
+
+此處用 Google APIs 的 script 替代
+
+-->
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script>
+<noscript>
+<style type="text/css">
+.noscript-hide {
+	display: none;
+}
+</style>
+</noscript>
+</head>
+<body class="zh-tw">
+<div class="header container_12">
+	<div class="nav">
+		<ul class="main-menu grid_10">
+<!-- wp_list_pages -->
+<li class="page_item page-item-13"><a href="#register" title="報名">報名</a></li>
+<li class="page_item page-item-15"><a href="#programs" title="議程">議程</a></li>
+<li class="page_item page-item-52"><a href="#venue" title="地點">地點</a></li>
+<li class="page_item page-item-54"><a href="#blog" title="Blog">Blog</a></li>
+<li class="page_item page-item-56"><a href="#sponsors" title="贊助商">贊助商</a></li>
+		</ul>
+		<ul class="lang-menu grid_2">
+			<li class="zh-tw first"><a href="#">中文</a></li>
+			<li class="en last"><a href="#">English</a></li>
+		</ul>
+		<!-- -->
+		<ul class="hover-msg grid_12">
+			<li class="page-item-13" rel="13">編輯頁面時自定變數 "hover_msg" 就會產生這個泡泡喔。</li>
+		</ul>
+	</div>
+	<div class="title grid_8">
+		<h1><a href="#">COSCUP 2010</a></h1>
+		<p id="tagline">Conference for Open Source Coders, Users and Promoters</p>
+	</div>
+	<div class="time-n-place grid_4">
+		<!-- Widget: Time and place //-->
+			<div class="textwidget">		<p class="time">8/14 – 8/15, 2010</p>
+		<p class="place">中央研究院人文社會科學館 國際會議廳</p></div>
+		<!-- // -->
+	</div>
+</div>
+<div class="clear"></div>
+<div class="section container_12">
+	<div class="article grid_9">
+		<!--<h2 class="page_item"><a href="http://coscup-wp.timc.idv.tw/zh-tw">首頁</a></h2>-->
+		<div class="section">
+<!-- 頁面內文 -->
+<h2>COSCUP 2010 版面範例</h2>
+<p><strong>請看原始碼了解各處的文字要從哪裡填入。</strong></p>
+<h3>內文原則</h3>
+<ul>
+<li>乾淨 HTML，維持格式統一，除非例外（例如，把 ordered list 的標號改成字母）嚴禁 inline style 與 style block。</li>
+<li>請善用 960.gs 所定義的格線寬度。</li>
+<li>請用 HTML 模式編輯內文，TinyMCE 不太乾淨。若有困難請洽文字編輯。</li>
+</ul>
+<h3>安裝</h3>
+<p>要調 style 這個檔案應該夠了。想要玩的話或是改 HTML 輸出的話才需要裝 WordPress 來執行這個佈景。</p>
+<ol>
+<li>安裝 WordPress</li>
+<li>在 <code>/wp-admin/options-permalink.php</code> 啟用固定網址。</li>
+<li>在 <code>/wp-admin/edit-pages.php</code> 建立兩個分頁，共三個，網址分別是 <code>/root<code>、<code>/zh-tw</code>、<code>/en</code>。</li>
+<li>在 <code>/wp-admin/options-reading.php</code> 把 <code>/root<code> 那頁設定為首頁。該頁面的內容不會被讀到，會自動跳到 <code>/zh-tw</code></li>
+<li>建立其他需要的頁面，指定到中文首頁或是英文首頁底下。</li>
+<li>到 <code>/wp-admin/widgets.php</code> 對各網頁模組區塊填入需要的內容。中英有別，請愛用文字模組。</li>
+</ol>
+<h3>HTML 火藥庫</h3>
+<p>內文若有需要，請複製貼上這裡的 HTML 來做想做的事情。</p>
+<h4>Generic Bubble</h4>
+
+<div class="bubble">
+<p class="kink">&nbsp;</p>
+<p>COSCUP Rocks!</p>
+</ul>
+<div class="clear"></div>
+</div>
+
+<h4>SNS Block - 含 Javascript 更新的 Plurk message。</h4>
+
+<div class="bubble">
+<p class="kink">&nbsp;</p>
+<p id="micro-blog-msg" class="noscript-hide">&nbsp;</p>
+<p id="micro-blog-time" class="noscript-hide">&nbsp;</p>
+<ul class="follow">
+<li class="first"><a href="http://twitter.com/coscup"><span class="sprite twitter"></span>Follow Us on Twitter</a></li>
+<li><a href="http://www.facebook.com/coscup"><span class="sprite facebook"></span>Become our Facebook Fan</a></li>
+<li class="last"><a href="http://www.plurk.com/coscup"><span class="sprite plurk"></span>See Us on Plurk</a></li>
+</ul>
+<div class="clear"></div>
+</div>
+
+<h4>SNS Block - 不含 Plurk message。</h4>
+
+<div class="bubble">
+<p class="kink">&nbsp;</p>
+<ul class="follow">
+<li class="first"><a href="http://twitter.com/coscup"><span class="sprite twitter"></span>Follow Us on Twitter</a></li>
+<li><a href="http://www.facebook.com/coscup"><span class="sprite facebook"></span>Become our Facebook Fan</a></li>
+<li class="last"><a href="http://www.plurk.com/coscup"><span class="sprite plurk"></span>See Us on Plurk</a></li>
+</ul>
+<div class="clear"></div>
+</div>
+
+<h4>大按鈕</h4>
+
+<p><a class="submitBigButton" href="http://bit.ly/coscup2010paper">別囉唆了，我要投稿！</a></p>
+
+<!-- 內文結束 -->
+&nbsp;
+		</div>
+	</div>
+	<div class="aside grid_3">
+<!-- Widget: aside -->
+<div id="linkcat-2" class="widget"><h3>Silver Level Sponsors</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.godgame.com.tw/" target="_blank"><img src="http://coscup-wp.timc.idv.tw/wp-content/uploads/2010/04/godgame_logo.png"  alt="GodGame Inc."  /></a></li>
+
+	</ul>
+</div>
+<div id="text-7" class="widget"><h3>We Need Your Help</h3>			<div class="textwidget"><p style="text-align: center">歡迎加入 COSCUP 活動籌備團隊</p>
+<a href="http://groups.google.com/group/coscup" class="bigButton">COSCUP 籌備團隊</a></div>
+		</div>	</div>
+</div>
+<div class="clear"></div>
+<div class="footer container_12">
+	<p class="footer-title grid_8">COSCUP: Conference for Open Source Coders, Users and Promoterss</p>
+	<ul class="footer-chronicle grid_4">
+<!-- widget: 年表 -->
+			<div class="textwidget">		<li class="first"><a href="http://coscup.org/2006">2006</a></li>
+		<li><a href="http://coscup.org/2007">2007</a></li>
+		<li><a href="http://coscup.org/2008">2008</a></li>
+		<li class="last"><a href="http://coscup.org/2009">2009</a></li></div>
+			</ul>
+</div>
+<script type="text/javascript" src="./assets/script.js"></script>
+<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+</body>
+</html>

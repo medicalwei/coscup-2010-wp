@@ -1,0 +1,535 @@
+/*   
+Theme Name:COSCUP 2010
+Theme URI:http://coscup.org/
+Description:Theme designed for COSCUP 2010.
+Author:timdream, envade, COSCUP website team.
+Author URI:
+Version:0
+*/
+
+/* reset.css */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+/* text.css */
+a:focus{outline:1px dotted}hr{border:0 #ccc solid;border-top-width:1px;clear:both;height:0}h1{font-size:25px}h2{font-size:23px}h3{font-size:21px}h4{font-size:19px}h5{font-size:17px}h6{font-size:15px}ol{list-style:decimal}ul{list-style:disc}li{margin-left:30px}p,dl,hr,h1,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset{margin-bottom:20px}
+
+/* 960.gs */
+.container_12,.container_16{margin-left:auto;margin-right:auto;width:960px}.grid_1,.grid_2,.grid_3,.grid_4,.grid_5,.grid_6,.grid_7,.grid_8,.grid_9,.grid_10,.grid_11,.grid_12,.grid_13,.grid_14,.grid_15,.grid_16{display:inline;float:left;margin-left:10px;margin-right:10px}.push_1,.pull_1,.push_2,.pull_2,.push_3,.pull_3,.push_4,.pull_4,.push_5,.pull_5,.push_6,.pull_6,.push_7,.pull_7,.push_8,.pull_8,.push_9,.pull_9,.push_10,.pull_10,.push_11,.pull_11,.push_12,.pull_12,.push_13,.pull_13,.push_14,.pull_14,.push_15,.pull_15{position:relative}.container_12 .grid_3,.container_16 .grid_4{width:220px}.container_12 .grid_6,.container_16 .grid_8{width:460px}.container_12 .grid_9,.container_16 .grid_12{width:700px}.container_12 .grid_12,.container_16 .grid_16{width:940px}.alpha{margin-left:0}.omega{margin-right:0}.container_12 .grid_1{width:60px}.container_12 .grid_2{width:140px}.container_12 .grid_4{width:300px}.container_12 .grid_5{width:380px}.container_12 .grid_7{width:540px}.container_12 .grid_8{width:620px}.container_12 .grid_10{width:780px}.container_12 .grid_11{width:860px}.container_16 .grid_1{width:40px}.container_16 .grid_2{width:100px}.container_16 .grid_3{width:160px}.container_16 .grid_5{width:280px}.container_16 .grid_6{width:340px}.container_16 .grid_7{width:400px}.container_16 .grid_9{width:520px}.container_16 .grid_10{width:580px}.container_16 .grid_11{width:640px}.container_16 .grid_13{width:760px}.container_16 .grid_14{width:820px}.container_16 .grid_15{width:880px}.container_12 .prefix_3,.container_16 .prefix_4{padding-left:240px}.container_12 .prefix_6,.container_16 .prefix_8{padding-left:480px}.container_12 .prefix_9,.container_16 .prefix_12{padding-left:720px}.container_12 .prefix_1{padding-left:80px}.container_12 .prefix_2{padding-left:160px}.container_12 .prefix_4{padding-left:320px}.container_12 .prefix_5{padding-left:400px}.container_12 .prefix_7{padding-left:560px}.container_12 .prefix_8{padding-left:640px}.container_12 .prefix_10{padding-left:800px}.container_12 .prefix_11{padding-left:880px}.container_16 .prefix_1{padding-left:60px}.container_16 .prefix_2{padding-left:120px}.container_16 .prefix_3{padding-left:180px}.container_16 .prefix_5{padding-left:300px}.container_16 .prefix_6{padding-left:360px}.container_16 .prefix_7{padding-left:420px}.container_16 .prefix_9{padding-left:540px}.container_16 .prefix_10{padding-left:600px}.container_16 .prefix_11{padding-left:660px}.container_16 .prefix_13{padding-left:780px}.container_16 .prefix_14{padding-left:840px}.container_16 .prefix_15{padding-left:900px}.container_12 .suffix_3,.container_16 .suffix_4{padding-right:240px}.container_12 .suffix_6,.container_16 .suffix_8{padding-right:480px}.container_12 .suffix_9,.container_16 .suffix_12{padding-right:720px}.container_12 .suffix_1{padding-right:80px}.container_12 .suffix_2{padding-right:160px}.container_12 .suffix_4{padding-right:320px}.container_12 .suffix_5{padding-right:400px}.container_12 .suffix_7{padding-right:560px}.container_12 .suffix_8{padding-right:640px}.container_12 .suffix_10{padding-right:800px}.container_12 .suffix_11{padding-right:880px}.container_16 .suffix_1{padding-right:60px}.container_16 .suffix_2{padding-right:120px}.container_16 .suffix_3{padding-right:180px}.container_16 .suffix_5{padding-right:300px}.container_16 .suffix_6{padding-right:360px}.container_16 .suffix_7{padding-right:420px}.container_16 .suffix_9{padding-right:540px}.container_16 .suffix_10{padding-right:600px}.container_16 .suffix_11{padding-right:660px}.container_16 .suffix_13{padding-right:780px}.container_16 .suffix_14{padding-right:840px}.container_16 .suffix_15{padding-right:900px}.container_12 .push_3,.container_16 .push_4{left:240px}.container_12 .push_6,.container_16 .push_8{left:480px}.container_12 .push_9,.container_16 .push_12{left:720px}.container_12 .push_1{left:80px}.container_12 .push_2{left:160px}.container_12 .push_4{left:320px}.container_12 .push_5{left:400px}.container_12 .push_7{left:560px}.container_12 .push_8{left:640px}.container_12 .push_10{left:800px}.container_12 .push_11{left:880px}.container_16 .push_1{left:60px}.container_16 .push_2{left:120px}.container_16 .push_3{left:180px}.container_16 .push_5{left:300px}.container_16 .push_6{left:360px}.container_16 .push_7{left:420px}.container_16 .push_9{left:540px}.container_16 .push_10{left:600px}.container_16 .push_11{left:660px}.container_16 .push_13{left:780px}.container_16 .push_14{left:840px}.container_16 .push_15{left:900px}.container_12 .pull_3,.container_16 .pull_4{left:-240px}.container_12 .pull_6,.container_16 .pull_8{left:-480px}.container_12 .pull_9,.container_16 .pull_12{left:-720px}.container_12 .pull_1{left:-80px}.container_12 .pull_2{left:-160px}.container_12 .pull_4{left:-320px}.container_12 .pull_5{left:-400px}.container_12 .pull_7{left:-560px}.container_12 .pull_8{left:-640px}.container_12 .pull_10{left:-800px}.container_12 .pull_11{left:-880px}.container_16 .pull_1{left:-60px}.container_16 .pull_2{left:-120px}.container_16 .pull_3{left:-180px}.container_16 .pull_5{left:-300px}.container_16 .pull_6{left:-360px}.container_16 .pull_7{left:-420px}.container_16 .pull_9{left:-540px}.container_16 .pull_10{left:-600px}.container_16 .pull_11{left:-660px}.container_16 .pull_13{left:-780px}.container_16 .pull_14{left:-840px}.container_16 .pull_15{left:-900px}.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}* html .clearfix,*:first-child+html .clearfix{zoom:1}
+
+/* global */
+
+body { /* use same font for both en and zh-tw */
+	background-color: rgb(51, 98, 114);
+	color: #fff;
+	font:13px/1.5 'Helvetica Neue',Arial,'Liberation Sans', /* Latin font */
+	'Apple LiGothic', 'LiHei Pro', 華康儷中黑, 文泉驛微米黑, 'Droid Sans Fallback', /* non-Win font */
+	'新細明體', /* Win font for text */
+	FreeSans,sans-serif; /* generic font */
+}
+
+body.zh-tw h1,
+body.zh-tw h2,
+body.zh-tw h3,
+body.zh-tw .main-menu li a,
+body.zh-tw .time-n-place .place,
+.article .section .submitBigButton, /* these are big font-size titles */
+.aside .widget a.bigButton,
+.bubble #micro-blog-msg,
+.article .section a /* not title, but change font for Google Chrome due to text-shadow */
+ {
+	font-family: 'Helvetica Neue',Arial,'Liberation Sans', /* Latin font */
+	'Apple LiGothic', 'LiHei Pro', 華康儷中黑, 文泉驛微米黑, 'Droid Sans Fallback', /* non-Win font */
+	'SimHei','微軟正黑體','新細明體', /* Win font for title */
+	FreeSans,sans-serif; /* generic font */
+}
+
+/* CSS sprites */
+.sprite {display: block; background: transparent url('assets/coscup.favicons.v1.png') no-repeat; text-indent: -10000px; }
+.wordpress { background-position: 0 0; width: 16px; height: 16px}
+.facebook { background-position: -18px 0; width: 16px; height: 16px}
+.twitter { background-position: -36px 0; width: 16px; height: 16px}
+.flickr { background-position: 0 -18px; width: 16px; height: 16px}
+.plurk { background-position: -18px -18px; width: 16px; height: 16px}
+.blogger { background-position: -36px -18px; width: 16px; height: 16px}
+
+
+/* header */
+
+.header {
+	padding-bottom: 15px;
+}
+
+.main-menu {
+	height: 40px;
+}
+.main-menu li {
+	display: block;
+	float: left;
+	list-style: none;
+	height: 40px; witdh: 144px;
+	text-align: center;
+	margin: 0 30px 0 0;
+}
+
+.main-menu li.not-ready {
+	opacity: 0.7;
+}
+
+.main-menu li.not-ready a {
+	cursor: default;
+}
+
+.main-menu li a {
+  text-decoration: none;
+  margin: 0 auto;
+  padding-top: 9px;
+  position: relative;
+  top: -10px;
+  display: inline-block;
+  height: 36px;
+  width: 108px;
+  vertical-align: top;
+  text-align: center;
+  font-size: 18px;
+  line-height: 36px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -o-border-radius: 9px;
+  border-radius: 9px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  border: 1px solid #ccd7db;
+  background: #7a98a3;
+  color: #404040;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3), 0px -1px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.125s linear;
+  -moz-transition: all 0.125s linear;
+}
+
+.main-menu li a:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  -o-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3), 0px -1px 0px rgba(0, 0, 0, 0.15);
+  border-color: #ffffff;
+  background-color: #a3b8bf;
+}
+
+.hover-msg {
+	margin: 0; padding: 0;
+}
+
+.hover-msg li:before {
+	position: absolute;
+	top: -11px;
+	left: 18px;
+	display: block;
+	width: 0;
+	height: 0;
+	border: none;
+	border-color: transparent;
+	border-width: 9px;
+	border-style: solid;
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-bottom: 9px solid rgba(255, 255, 255, 0.65);
+	border-top: 0;
+	content: "";
+}
+
+.hover-msg li {
+	display: none;
+	position: absolute;
+	max-width: 300px;
+	background: #000; /* IE6 */
+	border: 2px solid #fff; /* IE6 */
+	margin: 0 0 0 -10px; padding: 9px;
+	list-style: none;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	-o-border-radius: 9px;
+	border-radius: 9px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+	-o-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+}
+
+.hover-msg > li {
+	background: rgba(0, 0, 0, 0.625);
+	border: 2px solid rgba(255, 255, 255, 0.65);
+}
+
+.lang-menu {
+	text-align: right;
+	font-size: 16px;
+	margin-top: 5px;
+}
+.lang-menu li {
+	display: inline;
+	margin-left: 5px; padding-left: 5px;
+	border-left: 3px solid #fff;
+}
+
+.lang-menu li.first {
+	border-left: none;
+}
+
+.lang-menu li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+body.zh-tw .lang-menu li.zh-tw a,
+body.en .lang-menu li.en a {
+  color: #668995;
+  cursor: default;
+}
+
+.title h1 {
+	margin-bottom: 0;
+}
+
+.title h1 a {
+	display: block;
+	background: transparent url('assets/coscup.logo.png') no-repeat center top;
+	width: 440px;
+	height: 115px;
+	text-indent: -10000px;
+}
+
+.title #tagline {
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.time-n-place {
+	position: relative;
+	height: 125px;
+}
+
+.time-n-place .time {
+	position: absolute;
+	top: 30px; left: 0;
+	width: 100%; margin: 0; padding: 0;
+	display: block;
+	text-align: right;
+	font-size: 35px;
+	font-family: "Futura Condensed", "URW Gothic L", sans-serif;
+}
+
+.time-n-place .place {
+	position: absolute;
+	top: 72px; left: 0;
+	width: 100%; margin: 0; padding: 0;
+	display: block;
+	text-align: right;
+	font-size: 16px;
+	line-height: 20px;
+	color: #ddd;
+}
+
+/* article */
+
+.article .section {
+	font-size: 1.15em;
+	color: #ccd7d8;
+}
+
+.article .section a {
+	color: #fff;
+	text-decoration: none;
+	border-bottom:1px solid #70919c;
+	text-shadow:0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.article .section h2,
+.article .section h3,
+.article .section h4 {
+	color: #fff;
+}
+
+.article .section .submitBigButton {
+	display:block;
+	-webkit-border-radius:4.5px;
+	-moz-border-radius:4.5px;
+	-o-border-radius:4.5px;
+	border-radius:4.5px;
+	border:2px solid #d6dfe2 ;
+	color:#000000;
+	background:#70919c;
+	text-shadow:rgba(255,255,255,0.5) 0 1px 0px;
+	margin:10px auto;
+	padding:10px;
+	text-align:center;
+	-webkit-box-shadow:rgba(0,0,0,0.2) 0 3px 5px;
+	-moz-box-shadow:rgba(0,0,0,0.2) 0 3px 5px;
+	-o-box-shadow:rgba(0,0,0,0.2) 0 3px 5px;
+	box-shadow:rgba(0,0,0,0.2) 0 3px 5px;
+	-webkit-transition:all 0.125s linear;
+	-moz-transition:all 0.125s linear;
+	width: 20em;
+	font-size: 1.15em;
+}
+.article .section .submitBigButton:hover {
+	background:#a3b8bf;
+	-webkit-box-shadow:rgba(0,0,0,0.3) 0 3px 10px;
+	-moz-box-shadow:rgba(0,0,0,0.3) 0 3px 10px;
+	-o-box-shadow:rgba(0,0,0,0.3) 0 3px 10px;
+	box-shadow:rgba(0,0,0,0.3) 0 3px 10px;
+}
+
+/* WordPress insert image classes */
+
+.alignleft {
+	float: left;
+	margin-right: 20px;
+}
+
+.alignright {
+	float: right;
+	margin-left: 20px;
+}
+
+/* bubble */
+
+.bubble {
+	background-color: #76929b;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 9px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 9px;
+	-o-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 9px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 3px 9px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+
+	margin-top: 17px;
+	margin-bottom: 20px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 0 20px;
+	
+	color: #000;
+	text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0px;
+}
+
+.bubble .kink {
+	background: url("assets/coscup.bubble.kink.png") 20px top no-repeat;
+	height: 27px;
+	margin: 0 0 -17px 0; /* push content follows for 10px */
+	position: relative;
+	top: -17px;
+	text-indent: -1000px;
+}
+
+.bubble p { /* Generic message */
+	margin-bottom: 10px;
+}
+
+.bubble #micro-blog-msg {
+	margin-bottom: -20px; /* make room for #micro-blog-time */
+}
+
+.bubble #micro-blog-time {
+	float: right;
+	font-size: 0.87em;
+	color: #333;
+	margin-bottom: 10px; /* push content follows for 10px */
+	height: 20px;
+}
+
+.bubble .follow {
+	clear: both;
+	margin: 0 -20px;
+}
+
+.bubble .follow li {
+	display: block;
+	float: left;
+	list-style: none;
+	width: 33.3%;
+	margin: 0 0 10px 0;
+	
+}
+
+.bubble .follow li a {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000;
+	text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0px;
+	background-color: #6a838b;
+	font-size: 12px;
+	font-family: "Futura Condensed", "URW Gothic L", sans-serif;
+	padding: 10px 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	border-left: 1px solid rgba(255, 255, 255, 0.2);
+	border-right: 1px solid rgba(128, 128, 128, 0.2);
+	border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.bubble .follow li a .sprite {
+	display: inline-block;
+	margin: 0 4px;
+	opacity: 0.7;
+	vertical-align: -3px;
+}
+
+.bubble .follow li a:hover {
+	background:#a3b8bf;
+}
+
+.bubble .follow li a:hover .sprite {
+	opacity: 1;
+}
+
+.bubble .follow li.first a {
+	border-left: none;
+}
+
+.bubble .follow li.last a {
+	border-right: none;
+}
+/* aside */
+
+.aside .widget {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 9px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 9px;
+	-o-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 9px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 3px 9px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	background: #ececec;
+	color: #666;
+}
+
+.aside .widget h3 {
+	background: url("assets/coscup.sidebar.header.png");
+	margin-bottom: 10px;
+	padding-bottom: 2px;
+	padding-top: 13px;
+	line-height: 35px;
+	text-align: center;
+	color: #606060;
+	text-shadow: rgba(0, 0, 0, 0.1) 0 -1px 0px, rgba(255, 255, 255, 0.1) 0 1px 0px;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-family: "Futura Condensed", "URW Gothic L", sans-serif;
+	/* won't work, see https://developer.mozilla.org/en/CSS/-moz-border-radius#Differences_between_-moz-border-radius_and_-webkit-border-radius
+	-webkit-border-radius: 10px 10px 0 0;
+	*/ 
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+
+	-moz-border-radius: 10px 10px 0 0;
+	-o-border-radius: 10px 10px 0 0;
+	border-radius: 10px 10px 0 0;
+}
+
+.aside .widget .blogroll {
+	margin-bottom: 0;
+}
+
+.aside .widget .blogroll li {
+	margin: 0;
+	text-align: center;
+	list-style: none;
+}
+
+.aside .widget .textwidget {
+	margin: 0 10px;
+}
+
+.aside .widget a.bigButton {
+	display: block;
+	-webkit-border-radius: 4.5px;
+	-moz-border-radius: 4.5px;
+	-o-border-radius: 4.5px;
+	border-radius: 4.5px;
+	border: 2px solid #d6dfe2;
+	color: #000000;
+	background: #70919c;
+	text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0px;
+	margin: 10px 2px;
+	padding: 3px 3px;
+	text-align: center;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+	-o-box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px;
+	-webkit-transition: all 0.125s linear;
+	-moz-transition: all 0.125s linear;
+
+	text-decoration: none;
+	font-size: 1.15em;
+}
+.aside .widget a.bigButton:hover {
+	background: #a3b8bf;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 3px 10px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.3) 0 3px 10px;
+	-o-box-shadow: rgba(0, 0, 0, 0.3) 0 3px 10px;
+	box-shadow: rgba(0, 0, 0, 0.3) 0 3px 10px;
+}
+
+
+/* footer */
+.footer {
+	min-height: 36px;
+	max-height: 36px;
+	height: 36px;
+	background-color: #487280; /* IE6 */
+	border-top: 1px solid #a4b9c0; /* IE6 */
+	border-bottom: 1px solid #3f6470; /* IE6 */
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), color-stop(50%, rgba(255, 255, 255, 0.2)), color-stop(50%, rgba(255, 255, 255, 0.25)), to(rgba(255, 255, 255, 0.35)));
+	background-image: -moz-linear-gradient(left top, left bottom, rgba(255, 255, 255, 0.1), color-stop(50%, rgba(255, 255, 255, 0.2)), color-stop(50%, rgba(255, 255, 255, 0.25)), to(rgba(255, 255, 255, 0.35)));
+	margin-top: 36px;
+	-webkit-text-size-adjust: none;
+}
+
+body > .footer {
+	background-color: rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.footer .footer-title,
+.footer a {
+	color: #000; /* IE6 */
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4), 0px -1px 0px rgba(0, 0, 0, 0.15), 0px 0px 0.5px rgba(0, 0, 0, 0.1);
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+body > .footer .footer-title,
+body > .footer a {
+	color: rgba(0, 0, 0, 0.75);
+}
+
+.footer .footer-chronicle {
+	display: block;
+	text-align: right;
+}
+
+.footer .footer-chronicle li {
+	list-style: none;
+	display: inline;
+	margin: 0 0 0 3px;
+	padding: 0 0 0 5px;
+	border-left: 2px solid rgba(0, 0, 0, 0.75);
+}
+
+.footer .footer-chronicle li.first {
+	border-left: none;
+}
