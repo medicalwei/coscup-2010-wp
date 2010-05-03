@@ -204,7 +204,8 @@ body.en .lang-menu li.en a {
 .title #tagline {
 	font-size: 18px;
 	font-weight: bold;
-	color: #fff;
+	color: #d8d8d8;
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .time-n-place {
