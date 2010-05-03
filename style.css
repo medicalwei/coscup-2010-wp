@@ -202,10 +202,10 @@ body.en .lang-menu li.en a {
 }
 
 .title #tagline {
-	font-size: 18px;
-	font-weight: bold;
+	font-size: 14px;
 	color: #d8d8d8;
-	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+	font-family: "Futura Condensed", "URW Gothic L", sans-serif;
+	margin-left: 105px;
 }
 
 .time-n-place {
