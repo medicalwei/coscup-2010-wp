@@ -1,6 +1,6 @@
 <div class="clear"></div>
 <div class="footer container_12">
-	<p class="footer-title grid_8">COSCUP: Conference for Open Source Coders, Users and Promoterss</p>
+	<p class="footer-title grid_8">COSCUP: Conference for Open Source Coders, Users and Promoters</p>
 	<ul class="footer-chronicle grid_4">
 <?php
 global $lang;
