@@ -53,7 +53,7 @@ jQuery(function($){
 	if ($('#micro-blog-msg').length) updateFeed($);
 	
 	// Link tracking
-	$('.blogroll a').live(
+	$('.blogroll a, .sponsor').live(
 		'click',
 		function () {
 			_gaq.push(['_trackPageview', this.href.replace(/http:\/\/(.+)\/?$/, '/adv/2010/$1')]);
