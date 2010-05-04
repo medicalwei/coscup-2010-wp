@@ -27,7 +27,7 @@ _gaq.push(
 /*
  * update #micro-blog blocks
  */
-function updateFeed($) {
+function updateMicroBlog($) {
 	$.jGFeed(
 		'http://www.plurk.com/coscup.xml', //?' + parseInt((new Date()).getTime()/30*60*1000), // Don't use this hack coz we need scoring=h
 		function (feed) {
@@ -49,8 +49,59 @@ function updateFeed($) {
 	);
 }
 
+function updateBlog($) {
+	$.jGFeed(
+		'http://feeds.feedburner.com/coscup', //?' + parseInt((new Date()).getTime()/30*60*1000), // Don't use this hack coz we need scoring=h
+		function (feed) {
+			if (!feed) {
+				//Failed
+				$('#blog-block .noscript-hide').hide();
+				return;
+			}
+			var $b = $(document.createElement('div'));
+			$.each(
+				feed.entries,
+				function (k,v) {
+					//remove bad content in feed
+					if (v.link === 'http://feedproxy.google.com/~r/coscup/~3/KURdOLzQwtc/pingooo-coscup-20108-fred-2009-orz.html') return;
+					
+					var pd = new Date(v.publishedDate);
+					
+					var $e = $(document.createElement('div'));
+					$e.attr('id', 'blog-article').html(
+						'<h2><a target="_blank" href="' + v.link + '">' + v.title + '</a></h2>'
+						+ '<p clss="blog-date">' + (
+							(pd.getMonth()+1) + '/' 
+							+ pd.getDate() + ' ' 
+							+ pd.getHours() 
+							+ ':' + ((pd.getMinutes() < 10)?'0':'') + pd.getMinutes()
+						) + '</p>'
+						+ '<div class="blog-content">'
+						+ v.content
+						.replace(/(style|cellpadding|border)="([^"])+"/g, '') // remove all inline style
+						.replace(/<font[^>]*>(.+?)<\/font>/g, '$1') // remove <font>
+						.replace(/<center[^>]*>(.+?)<\/center>/g, '$1') // remove <center>
+						.replace(/<(\/?)h3>/g, '<$1h4>')
+						.replace(/<(\/?)h2>/g, '<$1h3>') // downgrade titles
+						.replace(/<br ?\/?>[\n \t\r]*(<br ?\/?>[\n \t\r]*)+/g, '<br>') // too much <br>
+						.replace(/<\/(p|div|span|a)>[\n \t\r]*(<br ?\/?>[\n \t\r]*)+/g, '</$1>') // still too much <br>
+						//.replace(/<br ?\/?>\n?/g, '') //remove all <br>
+						+ '</div>'
+					);
+					$b.append($e);
+				}
+			);
+			$('#blog-block').empty().append($b);
+		},
+		8 // 100 max
+	);
+}
+
 jQuery(function($){
-	if ($('#micro-blog-msg').length) updateFeed($);
+	
+	if ($('#micro-blog-msg').length) updateMicroBlog($);
+	
+	if ($('#blog-block').length) updateBlog($);
 	
 	// Link tracking
 	$('.blogroll a, .sponsor').live(
