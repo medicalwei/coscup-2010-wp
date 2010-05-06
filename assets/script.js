@@ -58,40 +58,47 @@ function updateBlog($) {
 				$('#blog-block .noscript-hide').hide();
 				return;
 			}
-			var $b = $(document.createElement('div'));
-			$.each(
-				feed.entries,
-				function (k,v) {
-					//remove bad content in feed
-					if (v.link === 'http://feedproxy.google.com/~r/coscup/~3/KURdOLzQwtc/pingooo-coscup-20108-fred-2009-orz.html') return;
-					
-					var pd = new Date(v.publishedDate);
-					
-					var $e = $(document.createElement('div'));
-					$e.attr('id', 'blog-article').html(
-						'<h2><a target="_blank" href="' + v.link + '">' + v.title + '</a></h2>'
-						+ '<p clss="blog-date">' + (
-							(pd.getMonth()+1) + '/' 
-							+ pd.getDate() + ' ' 
-							+ pd.getHours() 
-							+ ':' + ((pd.getMinutes() < 10)?'0':'') + pd.getMinutes()
-						) + '</p>'
-						+ '<div class="blog-content">'
-						+ v.content
-						.replace(/(style|cellpadding|border)="([^"])+"/g, '') // remove all inline style
-						.replace(/<font[^>]*>(.+?)<\/font>/g, '$1') // remove <font>
-						.replace(/<center[^>]*>(.+?)<\/center>/g, '$1') // remove <center>
-						.replace(/<(\/?)h3>/g, '<$1h4>')
-						.replace(/<(\/?)h2>/g, '<$1h3>') // downgrade titles
-						.replace(/<br ?\/?>[\n \t\r]*(<br ?\/?>[\n \t\r]*)+/g, '<br>') // too much <br>
-						.replace(/<\/(p|div|span|a)>[\n \t\r]*(<br ?\/?>[\n \t\r]*)+/g, '</$1>') // still too much <br>
-						//.replace(/<br ?\/?>\n?/g, '') //remove all <br>
-						+ '</div>'
-					);
-					$b.append($e);
+			var $b = $('#blog-block').empty();
+			var i = 0;
+			var appendArticle = function () {
+				if (i >= feed.entries.length) return;
+				var v = feed.entries[i];
+				i++;
+
+				//remove bad content in feed
+				if (v.link === 'http://feedproxy.google.com/~r/coscup/~3/KURdOLzQwtc/pingooo-coscup-20108-fred-2009-orz.html') {
+					setTimeout(appendArticle, 0);
+					return;
 				}
-			);
-			$('#blog-block').empty().append($b);
+
+				var pd = new Date(v.publishedDate);
+				
+				var $e = $(document.createElement('div'));
+				$e.attr('id', 'blog-article').html(
+					'<h2><a target="_blank" href="' + v.link + '">' + v.title + '</a></h2>'
+					+ '<p clss="blog-date">' + (
+						(pd.getMonth()+1) + '/' 
+						+ pd.getDate() + ' ' 
+						+ pd.getHours() 
+						+ ':' + ((pd.getMinutes() < 10)?'0':'') + pd.getMinutes()
+					) + '</p>'
+					+ '<div class="blog-content">'
+					+ v.content
+					.replace(/(style|cellpadding|border)="([^"])+"/g, '') // remove all inline style
+					.replace(/<font[^>]*>(.+?)<\/font>/g, '$1') // remove <font>
+					.replace(/<center[^>]*>(.+?)<\/center>/g, '$1') // remove <center>
+					.replace(/<(\/?)h3>/g, '<$1h4>')
+					.replace(/<(\/?)h2>/g, '<$1h3>') // downgrade titles
+					.replace(/<br ?\/?>[\n \t\r]*(<br ?\/?>[\n \t\r]*)+/g, '<br>') // too much <br>
+					.replace(/<\/(p|div|span|a)>[\n \t\r]*(<br ?\/?>[\n \t\r]*)+/g, '</$1>') // still too much <br>
+					//.replace(/<br ?\/?>\n?/g, '') //remove all <br>
+					+ '</div>'
+				);
+				$b.append($e);
+
+				setTimeout(appendArticle, 50);
+			}
+			setTimeout(appendArticle, 0);
 		},
 		8 // 100 max
 	);
