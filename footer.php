@@ -14,7 +14,7 @@ dynamic_sidebar('Chronicle ' . $lang);
 ?>
 	</ul>
 </div>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/script.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/script.js?0504"></script>
 <script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
 </body>
 </html>
