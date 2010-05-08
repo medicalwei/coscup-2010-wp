@@ -326,6 +326,20 @@ body.en .lang-menu li.en a {
 	text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0px;
 }
 
+.article .section .bubble a
+{
+	color: #000;
+	text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0px;
+	text-decoration: underline;
+}
+
+.article .section .bubble a:hover
+{
+	color: #333;
+	text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0px;
+	border-bottom: none;
+}
+
 .bubble .kink {
 	background: url("assets/coscup.bubble.kink.png") 20px top no-repeat;
 	height: 27px;
@@ -380,6 +394,7 @@ body.en .lang-menu li.en a {
 	border-left: 1px solid rgba(255, 255, 255, 0.2);
 	border-right: 1px solid rgba(128, 128, 128, 0.2);
 	border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+	text-decoration: none !important;
 }
 
 .bubble .follow li a .sprite {
@@ -452,6 +467,10 @@ body.en .lang-menu li.en a {
 	margin: 0;
 	text-align: center;
 	list-style: none;
+}
+
+.aside .widget .blogroll li.whiteBg {
+	background: #fff;
 }
 
 .aside .widget .textwidget {
