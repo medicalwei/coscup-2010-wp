@@ -475,6 +475,10 @@ body.en .lang-menu li.en a {
 	background: #fff;
 }
 
+.aside .widget .blogroll li.whiteBg {
+	background: #fff;
+}
+
 .aside .widget .textwidget {
 	margin: 0 10px;
 }
