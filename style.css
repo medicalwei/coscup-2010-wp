@@ -460,6 +460,7 @@ body.en .lang-menu li.en a {
 }
 
 .aside .widget .blogroll {
+	margin-top: -10px;
 	margin-bottom: 0;
 }
 
@@ -467,6 +468,10 @@ body.en .lang-menu li.en a {
 	margin: 0;
 	text-align: center;
 	list-style: none;
+}
+
+.aside .widget .blogroll li {
+	border-bottom: 1px solid #ccc;
 }
 
 .aside .widget .blogroll li.whiteBg {
