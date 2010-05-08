@@ -51,7 +51,7 @@ body.zh-tw .main-menu li a,
 body.zh-tw .time-n-place .place,
 .article .section .submitBigButton, /* these are big font-size titles */
 .aside .widget a.bigButton,
-.bubble #micro-blog-msg,
+.bubble p,
 .article .section a /* not title, but change font for Google Chrome due to text-shadow */
  {
 	font-family: 'Helvetica Neue',Arial,'Liberation Sans', /* Latin font */
