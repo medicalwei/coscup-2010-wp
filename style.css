@@ -467,6 +467,7 @@ body.en .lang-menu li.en a {
 	margin: 0;
 	text-align: center;
 	list-style: none;
+	border-bottom: 1px solid #ccc;
 }
 
 .aside .widget .blogroll li.whiteBg {
@@ -475,6 +476,10 @@ body.en .lang-menu li.en a {
 
 .aside .widget .textwidget {
 	margin: 0 10px;
+}
+
+.aside .widget .textwidget .blogroll {
+	margin: -10px -10px 0;
 }
 
 .aside .widget a.bigButton {
