@@ -2,7 +2,7 @@
 
 var _gaq = _gaq || [];
 _gaq.push(
- ['_setAccount', 'UA-12923351-1'], // Disable on test site.
+// ['_setAccount', 'UA-12923351-1'], // Disable on test site.
  ['_trackPageview']
 );
 
