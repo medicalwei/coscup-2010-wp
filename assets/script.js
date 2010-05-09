@@ -24,6 +24,15 @@ _gaq.push(
  */
 (function($){$.extend({jGFeed:function(url,fnk,num,key){if(url==null){return false;}var gurl="http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&scoring=h&q="+url;if(num!=null){gurl+="&num="+num;}if(key!=null){gurl+="&key="+key;}$.getJSON(gurl,function(data){if(typeof fnk=="function"){ if (data.responseData)fnk.call(this,data.responseData.feed);else fnk.call(this,false);}else{return false;}});}});})(jQuery);
 
+
+/*
+ * monoDate by Evnade
+ *
+ * http://github.com/monoceroi/monoDate
+ *
+ */
+String.prototype.clone=function(){return this.slice()};String.prototype.padToLengthWithPaddingString=function(a,b){if(!a)return this;b=b||"0";if(this.length>=a)return this;for(var c=""+this,d=0;d<=a-this.length-1;d++)c=b+c;return c}; Date.prototype.format=function(a){var b={YEAR:this.getFullYear(),MONTH:this.getMonth()+1,DATE:this.getDate(),DAY:this.getDay(),HOURS:this.getHours(),MINUTES:this.getMinutes(),SECONDS:this.getSeconds()},c=function(d){var e=/(\d+)(})/ig;if(d.match(e)!=null)return Number(String(d.match(e)[0]).replace(e,"$1"))};for(templateItemKey in b){if(!b.hasOwnProperty(templateItemKey))break;templateTagOccurrances=a.match(new RegExp("(#\\{)("+templateItemKey+")(?:, )?(?:\\d+)?(\\})","ig"));for(templateItemOccurranceKey in templateTagOccurrances){if(!templateTagOccurrances.hasOwnProperty(templateItemOccurranceKey))break; templateItemOccurranceString=templateTagOccurrances[templateItemOccurranceKey];a=a.replace(templateItemOccurranceString,String(b[templateItemKey]).padToLengthWithPaddingString(c(templateItemOccurranceString)))}}return a};
+
 /*
  * update #micro-blog blocks
  */
@@ -37,13 +46,7 @@ function updateMicroBlog($) {
 				return;
 			}
 			$('#micro-blog-msg').html(feed.entries[0].content);
-			var pd = new Date(feed.entries[0].publishedDate);
-			$('#micro-blog-time').text(
-				(pd.getMonth()+1) + '/' 
-				+ pd.getDate() + ' ' 
-				+ pd.getHours() 
-				+ ':' + pd.getMinutes()
-			);
+			$('#micro-blog-time').text((new Date(feed.entries[0].publishedDate)).format('#{YEAR, 4}/#{MONTH, 2}/#{DATE, 2} #{HOURS, 2}:#{MINUTES, 2}'));
 		},
 		1 // 100 max, we only need one.
 	);
@@ -71,17 +74,10 @@ function updateBlog($) {
 					return;
 				}
 
-				var pd = new Date(v.publishedDate);
-				
 				var $e = $(document.createElement('div'));
 				$e.attr('id', 'blog-article').html(
 					'<h2><a target="_blank" href="' + v.link + '">' + v.title + '</a></h2>'
-					+ '<p clss="blog-date">' + (
-						(pd.getMonth()+1) + '/' 
-						+ pd.getDate() + ' ' 
-						+ pd.getHours() 
-						+ ':' + ((pd.getMinutes() < 10)?'0':'') + pd.getMinutes()
-					) + '</p>'
+					+ '<p clss="blog-date">' + (new Date(v.publishedDate)).format('#{YEAR, 4}/#{MONTH, 2}/#{DATE, 2} #{HOURS, 2}:#{MINUTES, 2}') + '</p>'
 					+ '<div class="blog-content">'
 					+ v.content
 					.replace(/(style|cellpadding|border)="([^"])+"/g, '') // remove all inline style
